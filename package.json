@@ -1,0 +1,20 @@
+{
+	"name": "Closer",
+	"version": "0.0.1",
+	"description": "Projeto para publicação de conteúdos adultos",
+	"main": "index.js",
+	"repository": "https://github.com/gabriel2mm/closer.git",
+	"author": "Gabriel Maia",
+	"license": "MIT",
+	"private": true,
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		]
+	},
+	"scripts": {
+		"start:client": "cd packages/client && PORT=8080 yarn dev",
+    	"start:server": "cd packages/server && yarn start:dev",
+		"dev": "concurrently \"yarn start:client\" \"yarn start:server\""
+	}
+}
