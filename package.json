@@ -13,7 +13,7 @@
 		]
 	},
 	"scripts": {
-		"start:client": "cd packages/client && PORT=8080 yarn dev",
+		"start:client": "cd packages/web && PORT=8080 yarn dev",
     	"start:server": "cd packages/server && yarn start:dev",
 		"dev": "concurrently \"yarn start:client\" \"yarn start:server\""
 	}
