@@ -12,3 +12,6 @@ yarn-error.log
 /.idea/vcs.xml
 /.idea/prizeDraw 2.iml
 /.idea/modules.xml
+
+.DS_Store
+**/.DS_Store/**
