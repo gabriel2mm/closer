@@ -1,10 +1,19 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ConfigModule } from '@nestjs/config';
+import { MongoDbModule } from './shared/database/mongodb.module';
+import { UserModule } from './users/user.module';
+import { AuthModule } from './auth/auth.module';
+import { SecurityModule } from './shared/security/security.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    SecurityModule,
+    MongoDbModule.register(),
+    AuthModule,
+    UserModule.register(),
+  ],
+  controllers: [],
+  providers: [],
 })
-export class AppModule {}
+export class AppModule { }
