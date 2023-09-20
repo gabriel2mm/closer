@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import { ThemeProvider } from '@/src/Providers/theme-provide'
+import '../globals.css'
+
 
 export const metadata: Metadata = {
 	title: 'Closer | Conteúdos',
 	description: 'Poste seus conteúdos quando quiser e receba por isso',
 }
-
 export default function RootLayout({
 	children,
 }: {
@@ -13,7 +14,14 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="pt-BR">
-			<body>{children}</body>
+			<head>
+				<link rel='icon' href='/favicon.ico' sizes='any' />
+			</head>
+			<body>
+				<ThemeProvider>
+					{children}
+				</ThemeProvider>
+			</body>
 		</html>
 	)
 }
